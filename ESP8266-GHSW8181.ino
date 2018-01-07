@@ -11,6 +11,13 @@ void setup() {
 
   connectToWifi();
 
+  // Disable automatic input switching
+  Serial.println("");
+  Serial.readString();
+  Serial.println("swmode default");
+  Serial.readString();
+
+
   server.on("/", [](){
     Serial.readString(); // Discard any buffer
     Serial.println("read");
